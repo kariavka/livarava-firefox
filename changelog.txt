@@ -1,0 +1,5 @@
+Changelog Firifox extention 
+v 0.2
+1. Sending of information into Livarava works.
+2. Only one parameter(neuron) is required. Second (axon or relations) is optional.
+3. Neuron can be as text, link and so url.

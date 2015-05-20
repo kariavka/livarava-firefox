@@ -8,21 +8,28 @@ var btnSubmit = document.getElementById("sendit");
 
 //The event handler by pressing the submit button
 document.getElementById("form-add").onsubmit = function(){
-	sendInfo();
-	return false;
+	//only Neuron parameter is required
+	if (textNeuron.value != "") {
+		sendInfo();
+	}
+	else {
+//		alert("parameters is empty");
+		textNeuron.placeholder = "Neuron parameter is required!";
+		textNeuron.focus(); 
+		return false;
+	}
 }
 
 //function sends text from axon and neuron fields
 function sendInfo(){
 	var neuron = textNeuron.value;
 	var axon = textAxon.value;
-	if (neuron != "" && axon != "") {
-		textNeuron.value = "";
-		textAxon.value = "";
-		localStorage.setItem("neuronStorage", "");
-		localStorage.setItem("axonStorage", "");
-		self.port.emit("text-entered", [neuron, axon]);
-	}
+	textNeuron.value = "";
+	textAxon.value = "";
+	localStorage.setItem("neuronStorage", "");
+	localStorage.setItem("axonStorage", "");
+	self.port.emit("text-entered", [neuron, axon]);
+	
 }
 // Listen for the "show" event being sent from the
 // main add-on code. It means that the panel's about
@@ -46,8 +53,9 @@ self.port.on("hide", function onHide() {
 self.port.on("addneuron", function onMessage(selectionText) {
 	textNeuron.value = selectionText;
 	localStorage.setItem("neuronStorage", selectionText);
+	textNeuron.focus();
 });
-//To listen for "addaxon" message sent from the main add-on code
+//To listen for "add axon" message sent from the main add-on code
 self.port.on("addaxon", function onMessage(selectionText) {
 	textAxon.value = selectionText;
 	localStorage.setItem("axonStorage", selectionText);
