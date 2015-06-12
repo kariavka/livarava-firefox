@@ -1,4 +1,6 @@
 Changelog Firifox extension 
+v 0.3.6
+
 v 0.3.5
 1.Hide the Livarava extension panel for Chrome if extension  was installed.
 2.Neuron has been renamed to Liva and axon to Rava.
