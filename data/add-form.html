@@ -2,21 +2,29 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Livarava</title>
+    <title>LivaRava</title>
     <link rel="stylesheet" type="text/css" href="add-form.css">
 </head>
-<body>
-    <div>
-        <form class="form-container" id="form-add">
-            <div class="form-title"><h2>Livarava</h2></div>
-            <div class="form-title">Neuron</div>
-                <input class="form-field" type="text" id = "neuron" name = "neuron" placeholder="Add neuron here (You can use right click)"/><br />
-            <div class="form-title">Axon(Relations)</div>
-                <input class="form-field" type="text" id = "axon" name = "axon" placeholder="Add akson here (You can use right click)"/><br />
-            <div class="submit-container">
-                <input class="submit-button" type="submit" id = "sendit" value="Neuron it" />
-            </div>
-        </form>
-    </div>
+<body>  
+    <div class="all-space">
+        <div class="logo">
+            <div class="bg-logo"><img src="images/logo-bg.png" height = "90" width = "336" alt = "logo-bg" /></div>
+            <div class="image"><img src="images/logo.png" height = "49" width = "126" alt = "logo" /></div>
+            <div class="home"><a href=#><img id="goHome" src="images/home.png" height = "54" width = "54" alt = "home" /></a></div>
+        </div>
+            <form class="form-container" id="form-add">
+                <div class="form-field">
+                    <span class="form-title" id ="neuron_title" data-l10n-id="neuron"></span>
+                    <input class="input-field" type="text" id = "neuron" placeholder = Add neuron here(You can use right click)/>
+                </div>
+                <div class="form-field">
+                    <span class="form-title" id ="akson_title" data-l10n-id="akson"></span>
+                    <input class="input-field" type="text" id = "axon" placeholder = Add axon here(You can use right click)/>
+                </div>    
+                <div class="submit-container">
+                    <input class="submit-button" type="submit" id = "sendit" value = "neuron it"/>
+                </div>
+            </form>
+     </div>           
 </body>
 </html>

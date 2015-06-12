@@ -1,11 +1,11 @@
 {
   "name": "livarava",
-  "title": "Livarava extension",
-  "id": "jid1-dAn9sqJq43czMw",
+  "title": "livarava extension",
+  "id": "livarava@livarava.com",
   "description": "Livarava add-on",
   "author": "Livarava",
   "license": "MPL 2.0",
-  "homepage": "http://livarava.com",
-  "icon": "skin/icon.png",
-  "version": "0.2"
+  "homepage": "http://www.livarava.com",
+  "icon": "skin/icon.png", 
+  "version": "0.3.5"
 }

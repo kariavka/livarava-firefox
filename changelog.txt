@@ -1,4 +1,9 @@
-Changelog Firifox extention 
+Changelog Firifox extension 
+v 0.3.5
+1.Hide the Livarava extension panel for Chrome if extension  was installed.
+2.Neuron has been renamed to Liva and axon to Rava.
+3.Localized to 6 languages
+4.New design of popup
 v 0.2
 1. Sending of information into Livarava works.
 2. Only one parameter(neuron) is required. Second (axon or relations) is optional.
