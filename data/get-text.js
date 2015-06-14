@@ -5,7 +5,7 @@ var btnSubmit = document.getElementById("sendit");
 //textNeuron.addEventListener('input', function() {changeNeuronData()}, false);
 //textAxon.addEventListener('input', function() {changeAxonData()}, false);
 //btnSubmit.addEventListener('click', function (){onSubmit()}, false);
-"text-required"
+//"text-required"
 
 //The event handler by pressing the submit button
 document.getElementById("form-add").onsubmit = function(){
@@ -35,10 +35,10 @@ document.getElementById("goHome").onclick = function(){
 function sendInfo(){
 	var neuron = textNeuron.value;
 	var axon = textAxon.value;
-	textNeuron.value = "";
-	textAxon.value = "";
-	localStorage.setItem("neuronStorage", "");
-	localStorage.setItem("axonStorage", "");
+//	textNeuron.value = "";
+//	textAxon.value = "";
+//	localStorage.setItem("neuronStorage", "");
+//	localStorage.setItem("axonStorage", "");
 	self.port.emit("text-entered", [neuron, axon]);
 	
 }
@@ -52,11 +52,19 @@ self.port.on("show", function onShow(text) {
 //	if (localStorage.getItem("neuronStorage")!="" && typeof localStorage.getItem("neuronStorage") != 'undefined' ) textNeuron.value = localStorage.getItem("neuronStorage");
 //	if (localStorage.getItem("axonStorage")!="" && typeof localStorage.getItem("axonStorage") != 'undefined') textAxon.value = localStorage.getItem("axonStorage");
 //	textNeuron.focus();
+	console.log("show");
 	if (text[0] != "") textNeuron.placeholder = text[0];
 	if (text[1] != "") textAxon.placeholder = text[1];
 	if (text[2] != "") btnSubmit.value = text[2];
 });
-
+//To listen for "prefill" message sent from the main add-on code
+self.port.on("prefillpopup", function onPrefill(text) {
+	//Storage text fields info
+	
+	console.log("prefillpopup");
+	textNeuron.value = text[0];
+	textAxon.value = text[1];
+});
 //To listen for "hide" message sent from the main add-on code
 self.port.on("hide", function onHide() {
 	//Storage text fields info
